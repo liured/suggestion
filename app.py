@@ -128,7 +128,7 @@ def login():
         word, score = word_score.split('-')[0], word_score.split('-')[1]
         print('get word ==================',word, score)
         my_update(word, float(score))
-    return render_template('index1.html',name=word)
+    return render_template('search_result.html',name=word)
 
 if __name__ == "__main__":
     connections.create_connection(hosts=["localhost"], timeout=30)

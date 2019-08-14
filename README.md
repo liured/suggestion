@@ -1,5 +1,5 @@
 # suggestion
-   ElasticSearch + Flask实现搜索关键词自动补全功能demo。
+   ElasticSearch + Flask实现搜索关键词自动补全功能demo。（利益相关，省略简化了输入数据function）
 ## 介绍
    基于elasticsearch和flask实现搜索引擎自动补全（前缀匹配）功能，支持中文、英文、拼音（简拼/全拼）->中文的补全。
 

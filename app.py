@@ -1,7 +1,8 @@
 from flask import Flask, request, render_template, jsonify
 from elasticsearch_dsl import connections, Document, Text, Keyword, Completion, analyzer, Long, Float, token_filter,Q,Search
 from elasticsearch_dsl.analysis import CustomAnalyzer as _CustomAnalyzer
-from hanzi2pinyin import get_Invert_Index, get_words_score
+from hanzi2pinyin import get_Invert_Index
+from get_suggest_data import get_words_score
 
 def search_PinYin(input_pinyin, invert_index):
     trans_word_lst = None
@@ -96,7 +97,7 @@ def my_suggest(key):
     else:
         # 中英文补全
         suggest_list_1 = es_suggest(key)
-        print('##########')
+        print('########## 来自ES')
         suggest_list_1 = sorted(suggest_list_1, key=lambda w: w[1], reverse=True)
         print(suggest_list_1)
         k_set = set()
@@ -128,7 +129,7 @@ def login():
         word, score = word_score.split('-')[0], word_score.split('-')[1]
         print('get word ==================',word, score)
         my_update(word, float(score))
-    return render_template('search_result.html',name=word)
+    return render_template('result.html',word=word)
 
 if __name__ == "__main__":
     connections.create_connection(hosts=["localhost"], timeout=30)

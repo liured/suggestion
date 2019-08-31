@@ -22,3 +22,10 @@
    - 安装 Flask-1.1.1版本
    - 安装elasticsearch-dsl
 
+## 相关技术
+- ES的简单使用
+- 汉字转拼音
+- 倒排索引
+- Flask的简单使用
+
+<a href="https://zhuanlan.zhihu.com/p/80581588" target="_blank">查询推荐Demo实战相关技术</a>
